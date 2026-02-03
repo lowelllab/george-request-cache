@@ -103,7 +103,7 @@ class RequestCache
         $this->appEnv = function_exists('env') ? env('APP_ENV', 'local') : 'local';
         $this->prefix = strtolower(str_replace(' ', '_', $this->appName)) . '_' . $this->appEnv . '_cache:';
         $this->localCache = new LocalCache();
-        
+        $config = $config ?? (function_exists('config') ? config('request_cache') : null);
         // 加载配置
         if ($config !== null) {
             if (isset($config['request_cache'])) {
