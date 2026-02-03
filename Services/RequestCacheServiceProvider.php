@@ -31,7 +31,7 @@ class RequestCacheServiceProvider extends ServiceProvider
     {
         //Publish configuration if needed
         $this->publishes([
-            __DIR__ . '/../config/request-cache.php' => config_path('request-cache.php'),
+            __DIR__ . '/../config/request_cache.php' => config_path('request-cache.php'),
         ], 'config');
     }
 
